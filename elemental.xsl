@@ -47,7 +47,7 @@
   -->
 <!-- In this template, select all the pokemon that are fire, water, flying or ground -->
 <xsl:template match="/pokedex">
-  <xsl:variable name="pokemonResults" select="XPATH-QUERY-GOES-HERE" />
+  <xsl:variable name="pokemonResults" select="pokemon[type = 'fire' or type = 'water' or type = 'flying' or type = 'ground']" />
 
   <html>
   <body>
@@ -69,7 +69,7 @@
 <xsl:template match="pokemon">
     <tr>
       <td><xsl:value-of select="./name" />(<xsl:value-of select="@pokedexNumber" />)</td>
-      <td><xsl:apply-templates select="type" /></td>
+      <td><xsl:apply-templates select="./type" /></td>
     </tr>
 </xsl:template>
 
