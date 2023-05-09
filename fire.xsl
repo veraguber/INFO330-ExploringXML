@@ -20,7 +20,7 @@
   -->
 <!-- -->
 <xsl:template match="/pokedex">
-    <xsl:apply-templates select="XPATH-QUERY-GOES-HERE" />
+    <xsl:apply-templates select="pokemon[type = 'fire']" />
 </xsl:template>
 
 <!-- Print the name (classification): types -->
